@@ -25,6 +25,10 @@
   min-height: 20vh;
 }
 
+.search-form {
+  padding: 2rem 1rem;
+}
+
 .weather {
   min-height: 75vh;
 }
