@@ -1,5 +1,20 @@
+:root {
+  --charcoal: #264653ff;
+  --persian-green: #2a9d8fff;
+  --orange-yellow-crayola: #e9c46aff;
+  --sandy-brown: #f4a261ff;
+  --burnt-sienna: #e76f51ff;
+}
+
 .header {
   min-height: 5vh;
+  background-color: var(--charcoal);
+}
+
+.header h1,
+.header h2 {
+  color: white;
+  padding: 1rem 0rem;
 }
 
 .main {
