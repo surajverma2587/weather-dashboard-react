@@ -1,16 +1,20 @@
 import "./App.css";
+import CurrentWeather from "./components/CurrentWeather";
+import Header from "./components/Header";
+import RecentSearches from "./components/RecentSearches";
+import SearchForm from "./components/SearchForm";
 
 function App() {
   return (
     <div className="border border-danger">
-      <div className="header">Header</div>
+      <Header />
       <div className="row border main g-0">
         <div className="border col-sm-12 col-md-3">
-          <div>Recent Cities</div>
+          <RecentSearches />
         </div>
         <div className="border col-sm-12 col-md-9">
-          <div className="border search">Search</div>
-          <div className="border weather">Weather Data</div>
+          <SearchForm />
+          <CurrentWeather />
         </div>
       </div>
     </div>
