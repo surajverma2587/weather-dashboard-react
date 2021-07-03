@@ -64,7 +64,7 @@ class App extends Component {
     const { data, error, isLoading } = this.state;
 
     if (data && !isLoading && !error) {
-      return <CurrentWeather />;
+      return <CurrentWeather data={data} />;
     } else if (!data && !isLoading && error) {
       return <ErrorCard message={error} />;
     } else {
@@ -79,11 +79,11 @@ class App extends Component {
           title="Weather Dashboard"
           subtitle="Weather or not here it comes..."
         />
-        <div className="row border main g-0">
-          <div className="border col-sm-12 col-md-3">
+        <div className="row main g-0">
+          <div className=" col-sm-12 col-md-3">
             <RecentSearches />
           </div>
-          <div className="border col-sm-12 col-md-9">
+          <div className="col-sm-12 col-md-9">
             <SearchForm
               placeholder="Enter city name"
               onSubmit={this.onSubmit}
