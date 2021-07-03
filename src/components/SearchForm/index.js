@@ -10,6 +10,7 @@ const SearchForm = (props) => {
               id="search-city"
               placeholder={props.placeholder}
               onChange={props.onChange}
+              value={props.value}
             />
           </div>
           <div className="col-sm-12 col-md-2 p-2">

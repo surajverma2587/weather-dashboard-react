@@ -11,15 +11,11 @@ class App extends Component {
 
     this.state = {
       cityName: "Birmingham",
-      fetchData: false,
     };
   }
 
-  onCitySearch = (event) => {
+  onSubmit = (event) => {
     event.preventDefault();
-    this.setState({
-      fetchData: true,
-    });
   };
 
   onChange = (event) => {
@@ -27,10 +23,6 @@ class App extends Component {
       cityName: event.target.value,
     });
   };
-
-  shouldComponentUpdate(_, nextState) {
-    return nextState.fetchData;
-  }
 
   render() {
     return (
@@ -46,8 +38,9 @@ class App extends Component {
           <div className="border col-sm-12 col-md-9">
             <SearchForm
               placeholder="Enter city name"
-              onSubmit={this.onCitySearch}
+              onSubmit={this.onSubmit}
               onChange={this.onChange}
+              value={this.state.cityName}
             />
             <CurrentWeather />
           </div>
