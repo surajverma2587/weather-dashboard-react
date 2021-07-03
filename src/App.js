@@ -24,6 +24,10 @@ class App extends Component {
   }
 
   async componentDidMount() {
+    await this.getWeatherData();
+  }
+
+  async getWeatherData() {
     const params = {
       q: this.state.cityName,
       units: "metric",
@@ -38,6 +42,7 @@ class App extends Component {
     if (data) {
       this.setState({
         data,
+        error: null,
         isLoading: false,
       });
     }
@@ -45,13 +50,16 @@ class App extends Component {
     if (error) {
       this.setState({
         error,
+        data: null,
         isLoading: false,
       });
     }
   }
 
-  onSubmit = (event) => {
+  onSubmit = async (event) => {
     event.preventDefault();
+
+    await this.getWeatherData();
   };
 
   onChange = (event) => {
